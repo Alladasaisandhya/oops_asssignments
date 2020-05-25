@@ -1,0 +1,43 @@
+#Task1: Truck
+Now we need a Truck in our cars world.
+A truck is a Car but with the following additional behaviours
+
+Truck horn sounds “Honk Honk”
+Truck can load some cargo within max_cargo_weight
+Truck can load & unload the cargo only when the truck is at rest
+load & unload method expect cargo_weight as argument which is a positive integer. Incase of invalid data raise the ValueError as shown in below code samples
+Coding Guidelines:
+
+In case of invalid data during the creation of car. Your code should raise ValueError as mentioned in the below code sample
+>>> truck = Truck(color="Red", max_speed=250, acceleration=10, tyre_friction=3, max_cargo_weight=100)  
+>>> truck.load(50)  
+>>> truck.load(100)  
+Cannot load cargo more than max limit: 100  
+>>> truck.load(-100) 
+ValueError: Invalid value for cargo_weight
+
+>>> truck = Truck(color="Red", max_speed=250, acceleration=10, tyre_friction=3, max_cargo_weight=100)  
+>>> truck.start_engine()  
+>>> truck.accelerate()  
+>>> truck.load(50) # Prints
+Cannot load cargo during motion 
+>>> truck.sound_horn() # Prints
+Honk Honk  
+
+>>> truck = Truck(color="Red", max_speed=250, acceleration=10, tyre_friction=3, max_cargo_weight=100)  
+>>> truck.start_engine() 
+>>> truck.load(50)
+>>> truck.accelerate()  
+>>> truck.unload(50) # Prints
+Cannot unload cargo during motion 
+>>> truck.sound_horn() # Prints
+Honk Honk  
+
+>>> truck = Truck(color="Red", max_speed=250, acceleration=10, tyre_friction=3, max_cargo_weight=100)  
+>>> truck.start_engine() 
+>>> truck.load(50)
+>>> truck.unload(80)
+>>> truck.load(100) # Prints
+Cannot load cargo more than max limit: 100  
+>>> truck.unload(50)
+>>> truck.load(100)
