@@ -1,0 +1,32 @@
+#Task1: RaceCar
+Now we need a RaceCar in our cars world.
+A RaceCar is a Car but with the following additional behaviours.
+
+horn sounds like “Peep Peep\nBeep Beep”
+When a RaceCar is created it has 0 nitro points.
+On applying brakes at more than half the max speed a Car gets 10 nitro.
+When car accelerates & the nitro is available it gets additional 30% of acceleration value (rounded to int - ceil) as speed within max limits. And nitro get reduced by 10 points
+Should be able to see nitro
+Coding Guidelines:
+
+Continue writing code in the same race_car.py file
+>>> racecar = RaceCar(color="Red", max_speed=250, acceleration=50, tyre_friction=30)  
+>>> racecar.start_engine()  
+>>> racecar.accelerate()  
+>>> racecar.accelerate()  
+>>> racecar.accelerate()  
+>>> racecar.current_speed  
+150  
+>>> racecar.apply_brakes()  
+>>> racecar.current_speed  
+120  
+>>> racecar.nitro  
+10  
+>>> racecar.accelerate()  
+>>> racecar.current_speed  
+185 # 120 + 50 + (50 * 30 / 100)  
+>>> racecar.nitro  
+0  
+>>> car.sound_horn()  # Prints
+Peep Peep
+Beep Beep
